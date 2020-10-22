@@ -13,4 +13,6 @@ A simple Create Project Work Flow
 
 Component Design Flow Chart
 
+Spirits borrowed from Ant Design(https://ant.design/) and Material Design(https://material-ui.com/)
+
 
