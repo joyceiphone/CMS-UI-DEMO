@@ -34,7 +34,7 @@ export default function Projects(props) {
                 <NavBar handleCollapse={onCollapse} />
                 <ProjectStart handleVisibility={handleVisibility} />
             </Content>
-            <Modal title='New Project' visible={visible} onClose={handleClose} history={history} handlePopup={handlePopUp}></Modal>
+            <Modal title='New Project' visible={visible} onClose={handleClose} history={history}></Modal>
         </Layout>
     )
 }
