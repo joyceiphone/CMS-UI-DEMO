@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import DropDown from '../../components/Dropdown';
-import Menu from '../../components/Menu';
-import MenuItem from '../../components/Menu/MenuItem';
 import Button from '../../components/Button';
-import { projectsCompanies } from '../../constants/projectsData';
 import classnames from 'classnames';
 
 
@@ -137,7 +134,7 @@ export default function Modal(props) {
                                     </div>
                                 ) : (<h5 className="modal_input">Project name*</h5>)
                             }
-                            <input onClick={handleNameClick} ref={nameRef} className={classnames("name-input", { 'alert_outline': alert1 })} value={values.name} onChange={(e) => handleTextNameChange(e)} type="text" pleaceholder="What's the project?" />
+                            <input onClick={handleNameClick} ref={nameRef} className={classnames("name-input", {})} value={values.name} onChange={(e) => handleTextNameChange(e)} type="text" pleaceholder="What's the project?" />
                         </div>
                         <div>
                             {
@@ -148,17 +145,14 @@ export default function Modal(props) {
                                     </div>) : (
                                         <h5 className="modal_input">Customer*</h5>)
                             }
-                            <DropDown reference={customerRef} alert={alert2} showAlert={showAlert2} value={values.customer} textChange={handleTextCustomerChange} text="Who's the project for" handleFn={handleCustomerClick}>
-                                {
-
-                                }
-                                <Menu className='dropdown-menu'>
+                            <DropDown reference={customerRef} alert={alert2} showAlert={showAlert2} value={values.customer} textChange={handleTextCustomerChange} text="Who's the project for" handleValue={handleClick} handleFn={handleCustomerClick}>
+                                {/* <Menu className='dropdown-menu'>
                                     {
                                         projectsCompanies && projectsCompanies.map((company, i) => (
                                             <MenuItem key={i} handleClick={handleClick} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
                                         ))
                                     }
-                                </Menu>
+                                </Menu> */}
                             </DropDown>
                         </div>
                         <div>

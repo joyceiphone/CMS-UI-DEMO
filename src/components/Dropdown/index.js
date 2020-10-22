@@ -8,7 +8,8 @@ import classnames from 'classnames';
 import './index.scss';
 
 export default function Dropdown(props) {
-    const { children, text, reference, textChange, value, showAlert, handleFn, alert } = props;
+    const { children, text, reference, textChange, value, showAlert, handleFn, alert, handleValue } = props;
+    console.log(children);
     const [visible, setVisibility] = useState(false);
     const [addNew, setAddNew] = useState(false);
     const [input, setInput] = useState(value);
@@ -23,11 +24,11 @@ export default function Dropdown(props) {
 
     const menuRef = useRef(null);
 
-    useEffect(() => {
-        if (value !== '') {
-            setVisibility(!visible);
-        }
-    }, [value])
+    // useEffect(() => {
+    //     if (value !== '') {
+    //         setVisibility(!visible);
+    //     }
+    // }, [value])
 
     const handleAddNew = () => {
         setAddNew(true);
@@ -51,7 +52,7 @@ export default function Dropdown(props) {
         return () => {
             document.removeEventListener('click', handleClickOutSide, true);
         }
-    }, [menuRef, visible])
+    }, [menuRef])
 
     if (value === '') {
         return (
@@ -63,7 +64,7 @@ export default function Dropdown(props) {
                 {
                     visible ? (
                         addNew ? (
-                            <Popup className="popup_form" title="New Customer">
+                            <Popup className="popup_form" title="New Customer" form={true}>
                                 <div className="popup_content">
                                     <h5>*Name</h5>
                                     <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
@@ -75,7 +76,11 @@ export default function Dropdown(props) {
                             </Popup>
                         ) : (<div ref={menuRef} className="dropdown-menu-wrapper">
                             <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add New {value}</MenuItem>
-                            {children}
+                            {
+                                projectsCompanies && projectsCompanies.map((company, i) => (
+                                    <MenuItem key={i} handleClick={handleValue} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
+                                ))
+                            }
                         </div>)
                     ) : (
                             null
@@ -96,7 +101,7 @@ export default function Dropdown(props) {
                     {
                         visible ? (
                             addNew ? (
-                                <Popup className="popup_form" title="New Customer">
+                                <Popup>
                                     <div className="popup_content">
                                         <h5>*Name</h5>
                                         <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
@@ -107,7 +112,11 @@ export default function Dropdown(props) {
                                     </div>
                                 </Popup>
                             ) : (<div ref={menuRef} className="dropdown-menu-wrapper">
-                                {children}
+                                {
+                                    projectsCompanies && projectsCompanies.map((company, i) => (
+                                        <MenuItem key={i} handleClick={handleValue} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
+                                    ))
+                                }
                             </div>)
                         ) : (
                                 null
