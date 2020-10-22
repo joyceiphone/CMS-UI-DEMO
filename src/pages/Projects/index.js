@@ -23,9 +23,6 @@ export default function Projects(props) {
         setVisible(false);
     }
 
-    const handlePopUp = () => {
-        setPopUp(true);
-    }
 
     return (
         <Layout>
