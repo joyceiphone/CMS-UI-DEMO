@@ -11,3 +11,6 @@ A simple Create Project Work Flow
 - Once completed, it will direct you to the test project page
 
 
+Component Design Flow Chart
+
+
