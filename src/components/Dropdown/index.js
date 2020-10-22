@@ -8,8 +8,7 @@ import classnames from 'classnames';
 import './index.scss';
 
 export default function Dropdown(props) {
-    const { children, text, reference, textChange, value, showAlert, handleFn, alert, handleValue } = props;
-    console.log(children);
+    const { text, reference, textChange, value, showAlert, handleFn, alert, handleValue } = props;
     const [visible, setVisibility] = useState(false);
     const [addNew, setAddNew] = useState(false);
     const [input, setInput] = useState(value);
@@ -24,12 +23,6 @@ export default function Dropdown(props) {
 
     const menuRef = useRef(null);
 
-    // useEffect(() => {
-    //     if (value !== '') {
-    //         setVisibility(!visible);
-    //     }
-    // }, [value])
-
     const handleAddNew = () => {
         setAddNew(true);
         setInput(input);
@@ -39,6 +32,9 @@ export default function Dropdown(props) {
         setInput('');
         setVisibility(!visible);
         setAddNew(false);
+    }
+    const handleClose = () => {
+        setAddNew(false)
     }
 
     useEffect(() => {
@@ -64,7 +60,7 @@ export default function Dropdown(props) {
                 {
                     visible ? (
                         addNew ? (
-                            <Popup className="popup_form" title="New Customer" form={true}>
+                            <Popup className="popup_form" title="New Customer" form={true} onClose={handleClose}>
                                 <div className="popup_content">
                                     <h5>*Name</h5>
                                     <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
@@ -101,7 +97,7 @@ export default function Dropdown(props) {
                     {
                         visible ? (
                             addNew ? (
-                                <Popup>
+                                <Popup className="popup_form" title="New Customer" form={true} onClose={handleClose}>
                                     <div className="popup_content">
                                         <h5>*Name</h5>
                                         <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
@@ -135,7 +131,7 @@ export default function Dropdown(props) {
                     {
                         visible ? (
                             addNew ? (
-                                <Popup className="popup_form" title="New Customer" form={true}>
+                                <Popup className="popup_form" title="New Customer" form={true} onClose={handleClose}>
                                     <div className="popup_content">
                                         <h5>*Name</h5>
                                         <input type="text" onChange={(e) => handleInputChange(e)} value={input} />

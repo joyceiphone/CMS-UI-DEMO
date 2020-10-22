@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Layout, Content } from '../../components/Layout';
 import SideBar from '../../components/SideBar';
 import Button from '../../components/Button';
@@ -54,6 +54,21 @@ export default function Projects(props) {
         setMenuOpen(!menuOpen);
     }
 
+    const buttonRef = useRef(null);
+
+
+    useEffect(() => {
+        const handleClickOutSide = (e) => {
+            if (buttonRef.current && !buttonRef.current.contains(e.target)) {
+                setMenuOpen(false);
+            }
+        }
+        document.addEventListener('click', handleClickOutSide, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutSide, true);
+        }
+    }, [buttonRef])
+
     return (
         <Layout>
             <SideBar collapse={collapse} onCollapse={onCollapse} />
@@ -65,7 +80,7 @@ export default function Projects(props) {
                         <div className="project_test_header_buttons">
                             <div style={{ flexGrow: 1 }}></div>
                             <div style={{ position: 'relative' }}>
-                                <Button onClick={handleMenuOpen} className='primary-button'>Add a Project</Button>
+                                <Button reference={buttonRef} onClick={handleMenuOpen} className='primary-button'>Add a Project</Button>
                                 <Menu open={menuOpen} position="bottom">
                                     <MenuItem className="menu-item_dropdown">Option1</MenuItem>
                                     <MenuItem className="menu-item_dropdown">Option1</MenuItem>

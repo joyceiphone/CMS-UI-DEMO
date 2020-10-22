@@ -1,10 +1,17 @@
-.primary-button{
-    background-color: rgb(44, 160, 28);
-    color: white;
-    border: none;
+img{
+    transform: scale(2);
 }
 
-.primary-button:disabled{
-    cursor: default;
-    opacity: 0.5;
+.demo{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.demo h1{
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 100px;
 }

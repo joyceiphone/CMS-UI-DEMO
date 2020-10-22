@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import SideBar from '../../components/SideBar';
 import { Layout, Content } from '../../components/Layout';
+import SideBar from '../../components/SideBar';
+import NavBar from '../../components/NavBar';
+import bgImg from '../../assets/intuit-logo.svg';
 
 import './index.scss';
 
-export default function Dashboard() {
+export default function Accounting() {
     const [collapse, setCollapse] = useState(true);
+
+
     const onCollapse = () => {
         setCollapse(!collapse);
     }
@@ -13,8 +17,13 @@ export default function Dashboard() {
         <Layout>
             <SideBar collapse={collapse} onCollapse={onCollapse} />
             <Content>
-                <button onClick={onCollapse}>click</button>
-                <h1>Dashboard</h1>
+                <div className="project_test_wrapper">
+                    <NavBar handleCollapse={onCollapse} />
+                    <div className="demo">
+                        <h1>Dashboard</h1>
+                        <img src={bgImg} alt="intuit" />
+                    </div>
+                </div>
             </Content>
         </Layout>
     )

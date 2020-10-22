@@ -27,11 +27,13 @@ export default function Projects(props) {
     return (
         <Layout>
             <SideBar collapse={collapse} onCollapse={onCollapse} />
-            <Content>
-                <NavBar handleCollapse={onCollapse} />
-                <ProjectStart handleVisibility={handleVisibility} />
-            </Content>
-            <Modal title='New Project' visible={visible} onClose={handleClose} history={history}></Modal>
+            <div className="project_test_wrapper">
+                <Content>
+                    <NavBar handleCollapse={onCollapse} />
+                    <ProjectStart handleVisibility={handleVisibility} />
+                </Content>
+                <Modal title='New Project' visible={visible} onClose={handleClose} history={history}></Modal>
+            </div>
         </Layout>
     )
 }

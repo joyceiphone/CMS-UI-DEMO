@@ -4,15 +4,15 @@ import classnames from 'classnames';
 import './index.scss';
 
 export default function Button(props) {
-    const { children, className, onClick, disabled } = props;
+    const { children, className, onClick, disabled, reference } = props;
     let styleClasses = classnames(className, 'button');
 
     if (disabled) {
-        return <button disabled onClick={onClick} className={styleClasses}>{children}</button>
+        return <button ref={reference} disabled onClick={onClick} className={styleClasses}>{children}</button>
     }
     else {
         return (
-            <button onClick={onClick} className={styleClasses}>{children}</button>
+            <button ref={reference} onClick={onClick} className={styleClasses}>{children}</button>
         )
     }
 }

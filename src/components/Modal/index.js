@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import './index.scss';
 
 export default function Modal(props) {
-    const { title, visible, onClose, handlePopup, history } = props;
+    const { title, visible, onClose, history } = props;
     const [disabled, setDisabled] = useState(true);
     const [values, setValues] = useState({ name: '', customer: '', note: '' });
     const [alert1, setAlert1] = useState(false);
@@ -29,7 +29,6 @@ export default function Modal(props) {
 
     const handleSubmit = () => {
         onClose();
-        handlePopup();
         handleClear();
         history.history.push('/projects/test');
         console.log(history, 'mark');

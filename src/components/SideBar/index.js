@@ -46,6 +46,9 @@ export default function SideBar(props) {
                         <Link to='/mileage'>Mileage</Link>
                     </MenuItem>
                     <MenuItem className="menu-item_sidebar">
+                        <Link to='/accounting'>Accounting</Link>
+                    </MenuItem>
+                    <MenuItem className="menu-item_sidebar">
                         <Link to='/my-accountant'>My Accountant</Link>
                     </MenuItem>
                 </Menu>

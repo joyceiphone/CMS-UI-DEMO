@@ -5,7 +5,6 @@ import './index.scss';
 
 export default function MenuItem(props) {
     const { children, className, handleClick, value, add } = props;
-    console.log(children, 'mark');
     let styleClasses = classnames(className, 'menu-item');
     if (handleClick) {
         if (add) {

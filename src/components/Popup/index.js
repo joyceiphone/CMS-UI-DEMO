@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import './index.scss';
 
 export default function Popup(props) {
-    const { children, className, title, form } = props;
+    const { children, className, title, form, onClose } = props;
     const popRef = useRef(null);
 
     let styleClasses = '';
@@ -12,6 +12,23 @@ export default function Popup(props) {
     if (className) {
         styleClasses = classnames(className, 'popup');
     }
+
+    useEffect(() => {
+        const handleClickOutSide = (e) => {
+            if (popRef.current && !popRef.current.contains(e.target)) {
+                if (onClose) {
+                    onClose();
+                }
+                else {
+                    return;
+                }
+            }
+        }
+        document.addEventListener('click', handleClickOutSide, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutSide, true);
+        }
+    }, [onClose])
 
     if (form) {
         return (
