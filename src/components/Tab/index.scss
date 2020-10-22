@@ -1,0 +1,41 @@
+.tabs{
+    background-color:#f4f5f8 ;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.tabs_header{
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tabs_item_header{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.active{
+        border-bottom: 4px solid rgb(44, 160, 28);
+    }
+}
+
+.bottom_position{
+    position: absolute;
+    width: 98%;
+    height: 500px;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.tabs_item_header:hover{
+    cursor: pointer;
+}
+

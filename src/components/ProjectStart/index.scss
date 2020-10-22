@@ -1,0 +1,31 @@
+.project_start_wrapper{
+    background-color:#f4f5f8 ;
+    margin-left: 10px;
+    max-width: 700px;
+    border: 1px solid rgb(236, 238, 241);
+    border-radius: 4px;
+    margin-top: 6px;
+    padding-bottom: 20px;
+}
+
+.project_start_content{
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project_start_header h1{
+    max-width: 500px;
+    width: 100%;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.project_start_content button{
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}

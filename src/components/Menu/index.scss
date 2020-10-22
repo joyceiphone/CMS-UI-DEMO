@@ -1,0 +1,19 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 0.6;
+}
+
+.dropdown-menu{
+    display: flex;
+}
+
+.menu_bottom{
+    position: absolute;
+    top: 42px;
+    z-index: 1;
+    background-color: white;
+    border:1px solid #babec5;
+}

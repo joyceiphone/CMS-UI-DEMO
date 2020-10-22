@@ -1,0 +1,34 @@
+.navbar{
+    display: flex;
+    flex-grow:1;
+    align-items: center;
+    background-color: white;
+}
+
+.icon{
+    padding: 14px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .icon:hover{
+        cursor: pointer;
+        background-color:#f4f5f8;
+}
+
+.nav_text{
+    display: flex;
+    margin-left: 12px;
+    text-align: left;
+}
+
+.nav_text h4{
+    margin: 0;
+}
+
+.icon-right{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
