@@ -4,7 +4,7 @@ Demo Website: https://quizzical-morse-f2a22a.netlify.app/
 
 A simple Create Project Work Flow
 
-- Click on Project on the Sidebar
+- Click on Projects on the Sidebar
 
 - On the Project Page, click on "Start a Project"
 
