@@ -4,8 +4,8 @@ Demo Website: https://quizzical-morse-f2a22a.netlify.app/
 
 A simple Create Project Work Flow
 
-*Item Click on Project on the Sidebar
-*Item On the Project Page, click on "Start a Project"
-*Item Once completed, it will direct you to the test project page
+#^. Click on Project on the Sidebar
+#^. On the Project Page, click on "Start a Project"
+#^. Once completed, it will direct you to the test project page
 
 
