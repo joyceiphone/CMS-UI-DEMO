@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Content } from '../../components/Layout';
 import SideBar from '../../components/SideBar';
-import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import NavBar from '../../components/NavBar';
 import ProjectStart from '../../components/ProjectStart';
@@ -12,7 +11,6 @@ export default function Projects(props) {
     const { history } = props;
     const [collapse, setCollapse] = useState(true);
     const [visible, setVisible] = useState(false);
-    const [popUpOpen, setPopUp] = useState(false);
 
 
     const onCollapse = () => {
@@ -27,10 +25,6 @@ export default function Projects(props) {
 
     const handlePopUp = () => {
         setPopUp(true);
-    }
-
-    const handlePopUpClose = () => {
-        setPopUp(false);
     }
 
     return (

@@ -8,7 +8,7 @@ export default function Menu(props) {
     let styleClasses = classnames(className, 'menu');
 
     if (position === 'bottom') {
-        styleClasses += ' ' + 'menu_bottom';
+        styleClasses += ' menu_bottom';
     }
 
     return (

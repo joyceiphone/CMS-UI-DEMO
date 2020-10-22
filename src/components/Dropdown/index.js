@@ -51,7 +51,7 @@ export default function Dropdown(props) {
         return () => {
             document.removeEventListener('click', handleClickOutSide, true);
         }
-    }, [menuRef])
+    }, [menuRef, visible])
 
     if (value === '') {
         return (

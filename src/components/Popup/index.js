@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import './index.scss';
@@ -15,12 +15,7 @@ export default function Popup(props) {
     useEffect(() => {
         const handleClickOutSide = (e) => {
             if (popRef && popRef.current && !popRef.current.contains(e.target)) {
-                if (handlePopUp) {
-                    handlePopUp();
-                }
-                else {
-                    return;
-                }
+                handlePopUp();
             }
         }
         document.addEventListener('click', handleClickOutSide, true);

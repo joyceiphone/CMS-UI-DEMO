@@ -25,9 +25,6 @@ export default function Projects(props) {
     const onCollapse = () => {
         setCollapse(!collapse);
     }
-    const handleVisibility = () => {
-        setVisible(!visible);
-    }
     const handleClose = () => {
         setVisible(false);
     }
