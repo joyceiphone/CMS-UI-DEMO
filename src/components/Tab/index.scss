@@ -17,16 +17,24 @@
 }
 
 .tabs_item_header{
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // width: auto;
     padding-top: 3px;
     padding-bottom: 3px;
-    text-align: left;
-    margin-right: 10px;
+    text-align: center;
+    // margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     &.active{
-        border-bottom: 4px solid rgb(44, 160, 28);
+        hr{
+            height: 4px;
+            width: 80%;
+            background-color: rgb(44, 160, 28);
+            border: none;
+        }
     }
 }
 

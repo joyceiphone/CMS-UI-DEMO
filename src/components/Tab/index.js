@@ -17,6 +17,7 @@ export default function Tab(props) {
                     return (
                         <div className="tabs_item_header_wrapper">
                             <div className={classnames("tabs_item_header", { active: tab === i + 1 })} onClick={() => handleChageTab(i)}>{title}
+                                <hr />
                             </div>
                         </div>
                     )
