@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Button';
 import classnames from 'classnames';
 
 import './index.scss';
@@ -43,7 +44,7 @@ export function CardWithSteps(props) {
                         <div>
                             <h4>Your project at a glance</h4>
                         </div>
-                        <div onClick={handlePopUpClose}>X</div>
+                        <div className="div_close" onClick={handlePopUpClose}><span>x</span></div>
                     </div>
                     <div className="card_step_body">
                         <p>See your project's performance end-to-end. Track income and all your clinets, including labor</p>
@@ -51,7 +52,7 @@ export function CardWithSteps(props) {
                     <div className="card_step_footer">
                         <h6>{num} of {limit}</h6>
                         <div className="card_step_button">
-                            <button onClick={handleMoveNext}>Next</button>
+                            <Button className="black-button" onClick={handleMoveNext}>Next</Button>
                         </div>
                     </div>
                 </div>
@@ -66,7 +67,7 @@ export function CardWithSteps(props) {
                         <div>
                             <h4>Your project at a glance</h4>
                         </div>
-                        <div onClick={handlePopUpClose}>X</div>
+                        <div className="div_close" onClick={handlePopUpClose}><span>x</span></div>
                     </div>
                     <div className="card_step_body">
                         <p>See your project's performance end-to-end. Track income and all your clinets, including labor</p>
@@ -74,8 +75,8 @@ export function CardWithSteps(props) {
                     <div className="card_step_footer">
                         <h6>{num} of {limit}</h6>
                         <div className="card_step_button">
-                            <button onClick={handleMoveBack}>Back</button>
-                            <button onClick={handleMoveNext}>Next</button>
+                            <Button className="black-button" onClick={handleMoveBack}>Back</Button>
+                            <Button className="black-button" onClick={handleMoveNext}>Next</Button>
                         </div>
                     </div>
                 </div>
@@ -91,7 +92,7 @@ export function CardWithSteps(props) {
                         <div>
                             <h4>Your project at a glance</h4>
                         </div>
-                        <div onClick={handlePopUpClose}>X</div>
+                        <div className="div_close" onClick={handlePopUpClose}><span>x</span></div>
                     </div>
                     <div className="card_step_body">
                         <p>See your project's performance end-to-end. Track income and all your clinets, including labor</p>
@@ -99,8 +100,8 @@ export function CardWithSteps(props) {
                     <div className="card_step_footer">
                         <h6>{num} of {limit}</h6>
                         <div className="card_step_button">
-                            <button onClick={handleMoveBack}>Back</button>
-                            <button onClick={handlePopUpClose}>Done</button>
+                            <Button className="black-button" onClick={handleMoveBack}>Back</Button>
+                            <Button className="black-button" onClick={handlePopUpClose}>Done</Button>
                         </div>
                     </div>
                 </div>

@@ -91,3 +91,32 @@ textarea{
     bottom: 15px;
     padding: 10px 20px;
 }
+
+.div_close{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    opacity: 0.5;
+    font-size: 30px;
+}
+
+.div_close:hover{
+    cursor: pointer;
+    animation: ripple 200ms linear;
+    animation-fill-mode: forwards;
+    border-radius: 50%;
+}
+
+.div_close span{
+    margin: 0;
+   margin-bottom: 10px;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(1.2);
+        background-color:#babec5;
+    }
+  }

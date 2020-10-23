@@ -31,7 +31,6 @@ export default function Modal(props) {
         onClose();
         handleClear();
         history.history.push('/projects/test');
-        console.log(history, 'mark');
     }
 
     const handleNameClick = () => {
@@ -67,7 +66,6 @@ export default function Modal(props) {
     useEffect(() => {
         const handleClickOutSide = (e) => {
             if (nameRef.current && !nameRef.current.contains(e.target)) {
-                console.log(nameRef.current);
                 if (values.name === '') {
                     setAlert1(true);
                 }
@@ -121,7 +119,7 @@ export default function Modal(props) {
                 <div className="modal_wrapper">
                     <div className='modal_header'>
                         <h4>{title}</h4>
-                        <div onClick={handleClose}>x</div>
+                        <div className="div_close" onClick={handleClose}><span>x</span></div>
                     </div>
                     <div className='modal_content'>
                         <div>
@@ -145,13 +143,6 @@ export default function Modal(props) {
                                         <h5 className="modal_input">Customer*</h5>)
                             }
                             <DropDown reference={customerRef} alert={alert2} showAlert={showAlert2} value={values.customer} textChange={handleTextCustomerChange} text="Who's the project for" handleValue={handleClick} handleFn={handleCustomerClick}>
-                                {/* <Menu className='dropdown-menu'>
-                                    {
-                                        projectsCompanies && projectsCompanies.map((company, i) => (
-                                            <MenuItem key={i} handleClick={handleClick} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
-                                        ))
-                                    }
-                                </Menu> */}
                             </DropDown>
                         </div>
                         <div>

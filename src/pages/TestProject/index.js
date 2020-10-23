@@ -11,6 +11,10 @@ import OverView from '../../components/OverView';
 import { CardWithSteps } from '../../components/Card';
 import Menu from '../../components/Menu';
 import MenuItem from '../../components/Menu/MenuItem';
+import TimeActivity from '../../components/TimeActivity';
+import Transaction from '../../components/Transactions';
+import ProjectsReports from '../../components/ProjectsReports';
+
 
 import './index.scss';
 
@@ -93,9 +97,15 @@ export default function Projects(props) {
                         <TabItem title="Overview">
                             <OverView />
                         </TabItem>
-                        <TabItem title="Transactions">Transactions</TabItem>
-                        <TabItem title="Time Activity">Time Activity</TabItem>
-                        <TabItem title="Projects Reports">Projects Reports</TabItem>
+                        <TabItem title="Transactions">
+                            <Transaction />
+                        </TabItem>
+                        <TabItem title="Time Activity">
+                            <TimeActivity />
+                        </TabItem>
+                        <TabItem title="Projects Reports">
+                            <ProjectsReports />
+                        </TabItem>
                     </Tab>
                     <Modal title='New Project' visible={visible} onClose={handleClose} handlePopup={handlePopUp} history={history}></Modal>
                     {
@@ -117,9 +127,15 @@ export default function Projects(props) {
                                 <TabItem title="Overview">
                                     <OverView />
                                 </TabItem>
-                                <TabItem title="Transactions">Transactions</TabItem>
-                                <TabItem title="Time Activity">Time Activity</TabItem>
-                                <TabItem title="Projects Reports">Projects Reports</TabItem>
+                                <TabItem title="Transactions">
+                                    <Transaction />
+                                </TabItem>
+                                <TabItem title="Time Activity">
+                                    <TimeActivity />
+                                </TabItem>
+                                <TabItem title="Projects Reports">
+                                    <ProjectsReports />
+                                </TabItem>
                             </Tab>
                         </Popup>)
                     }

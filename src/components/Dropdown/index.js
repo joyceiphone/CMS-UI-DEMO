@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { projectsCompanies } from '../../constants/projectsData';
 import MenuItem from '../../components/Menu/MenuItem';
 import Popup from '../../components/Popup';
+import Button from '../../components/Button';
 
 import classnames from 'classnames';
 
@@ -50,6 +51,12 @@ export default function Dropdown(props) {
         }
     }, [menuRef])
 
+    useEffect(() => {
+        if (input !== '') {
+            setVisibility(true);
+        }
+    }, [input])
+
     if (value === '') {
         return (
             <div className="drop-down">
@@ -65,13 +72,16 @@ export default function Dropdown(props) {
                                     <h5>*Name</h5>
                                     <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
                                     <div className="button_area">
-                                        <span>More Details</span>
-                                        <button onClick={handleCloseAddNew}>close</button>
+                                        <span style={{ color: "#0077c5" }}>Details</span>
+                                        <Button className="white-button" onClick={handleCloseAddNew}>Save</Button>
+                                    </div>
+                                    <div className="popup_footer">
+                                        <span style={{ color: "#0077c5" }}>Got a Gmail Account</span>
                                     </div>
                                 </div>
                             </Popup>
                         ) : (<div ref={menuRef} className="dropdown-menu-wrapper">
-                            <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add New {value}</MenuItem>
+                            <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add New</MenuItem>
                             {
                                 projectsCompanies && projectsCompanies.map((company, i) => (
                                     <MenuItem key={i} handleClick={handleValue} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
@@ -102,8 +112,11 @@ export default function Dropdown(props) {
                                         <h5>*Name</h5>
                                         <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
                                         <div className="button_area">
-                                            <span>More Details</span>
-                                            <button onClick={handleCloseAddNew}>close</button>
+                                            <span style={{ color: "#0077c5" }}>Details</span>
+                                            <Button className="white-button" onClick={handleCloseAddNew}>Save</Button>
+                                        </div>
+                                        <div className="popup_footer">
+                                            <span style={{ color: "#0077c5" }}>Got a Gmail Account</span>
                                         </div>
                                     </div>
                                 </Popup>
@@ -136,13 +149,16 @@ export default function Dropdown(props) {
                                         <h5>*Name</h5>
                                         <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
                                         <div className="button_area">
-                                            <span>More Details</span>
-                                            <button onClick={handleCloseAddNew}>close</button>
+                                            <span style={{ color: "#0077c5" }}>Details</span>
+                                            <Button className="white-button" onClick={handleCloseAddNew}>Save</Button>
+                                        </div>
+                                        <div className="popup_footer">
+                                            <span style={{ color: "#0077c5" }}>Got a Gmail Account</span>
                                         </div>
                                     </div>
                                 </Popup>
                             ) : (<div className="dropdown-menu-wrapper" ref={menuRef}>
-                                <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add New {value}</MenuItem>
+                                <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add {value}</MenuItem>
                             </div>)
                         ) : (
                                 null
