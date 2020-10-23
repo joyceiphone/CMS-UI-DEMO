@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SimpleCard } from '../Card';
+import { SimpleCard, CardWithHeader, CardDetails } from '../Card';
 
 import './index.scss';
 
@@ -9,16 +9,22 @@ export default function OverView() {
         <div className="overview-container">
             <div className="row">
                 <SimpleCard color="rgb(44, 160, 28)" text="INCOME" />
-                <SimpleCard color="rgb(44, 160, 28)" text="COSTS" />
+                <CardWithHeader category="INCOME" >
+                    <CardDetails title="Invoices" content="Expand your business" />
+                </CardWithHeader>
             </div>
             <div className="row">
-                <SimpleCard color="rgb(44, 160, 28)" text="COSTS" />
-                <SimpleCard color="rgb(44, 160, 28)" text="INCOME" />
-                <SimpleCard color="rgb(44, 160, 28)" text="COSTS" />
-                <SimpleCard color="rgb(44, 160, 28)" text="COSTS" />
+                <SimpleCard color="rgb(16, 128, 0)" text="COSTS" />
+                <CardWithHeader category="HOURLY TIME COST">
+                    <CardDetails title="Hours" content="Expand your business" />
+                </CardWithHeader>
+                <CardWithHeader category="EXPENSE">
+                    <CardDetails title="Expenses" content="Expand your business" />
+                    <CardDetails title="Bills" content="Expand your business" />
+                </CardWithHeader>
             </div>
             <div className="row">
-                <SimpleCard color="rgb(44, 160, 28)" text="COSTS" className="middle" />
+                <SimpleCard color="black" text="PROFITS" className="middle" />
             </div>
         </div>
     )

@@ -14,8 +14,12 @@ export default function Tab(props) {
             <div className="tabs_header">
                 {Children.map(children, (child, i) => {
                     const { title } = child.props;
-                    return <div className={classnames("tabs_item_header", { active: tab === i + 1 })} onClick={() => handleChageTab(i)}>{title}
-                    </div>
+                    return (
+                        <div className="tabs_item_header_wrapper">
+                            <div className={classnames("tabs_item_header", { active: tab === i + 1 })} onClick={() => handleChageTab(i)}>{title}
+                            </div>
+                        </div>
+                    )
                 })}
             </div>
             <div className="tabs_content">

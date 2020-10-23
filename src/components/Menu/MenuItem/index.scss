@@ -38,7 +38,20 @@
 }
 
 .menu-item_dropdown:hover{
-    color:rgb(44, 160, 28);;
+    color:rgb(44, 160, 28);
     cursor: pointer;
     background-color:#E8E8E8;
+}
+
+.menu-item_click{
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 15px;
+    font-weight: 400;
+}
+
+.menu-item_click:hover{
+    cursor: pointer;
 }

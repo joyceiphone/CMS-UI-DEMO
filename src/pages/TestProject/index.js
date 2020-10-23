@@ -83,13 +83,16 @@ export default function Projects(props) {
                         <h4>Test Project</h4>
                         <div className="project_test_header_buttons">
                             <div style={{ flexGrow: 1 }}></div>
-                            <div style={{ position: 'relative' }}>
-                                <Button reference={buttonRef} onClick={handleMenuOpen} className='primary-button'>Add a Project</Button>
-                                <Menu open={menuOpen} position="bottom">
-                                    <MenuItem className="menu-item_dropdown">Option1</MenuItem>
-                                    <MenuItem className="menu-item_dropdown">Option1</MenuItem>
-                                    <MenuItem className="menu-item_dropdown">Option1</MenuItem>
-                                </Menu>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <Button className="white-button">Edit</Button>
+                                <div style={{ position: 'relative' }}>
+                                    <Button reference={buttonRef} onClick={handleMenuOpen} className='primary-button menu-button'>Add a Project <svg style={{ marginLeft: '10px' }} width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm0 15l-5-5h4V7h2v5h4l-5 5z" fill="white" ></path></svg></Button>
+                                    <Menu open={menuOpen} position="bottom" className="menu_click">
+                                        <MenuItem className="menu-item_click">Option1</MenuItem>
+                                        <MenuItem className="menu-item_click">Option1</MenuItem>
+                                        <MenuItem className="menu-item_click">Option1</MenuItem>
+                                    </Menu>
+                                </div>
                             </div>
                         </div>
                     </div>

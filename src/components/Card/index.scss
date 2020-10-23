@@ -19,10 +19,10 @@
 }
 
 .card_step{
+    left: 400px;
     min-width: 500px;
     position: fixed;
     bottom: 490px;
-    left: 370px;
     z-index: 2;
     width: 300px;
     background-color: white;
@@ -30,9 +30,71 @@
 }
 
 @for $i from 1 through 4{
-    .card_step-#{$i}{
-        left: 100px *$i + 270px;
+    @if $i == 1{
+        .card_step-#{$i}{
+            left: 30px*$i + 360px;
+        }
     }
+    @else{
+        .card_step-#{$i}{
+            left: 116*$i + 378px;
+        }
+    }
+}
+.card{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color:#f4f5f8;
+display: flex;
+width: 100%;
+border:1px solid #babec5;
+margin-bottom: 10px;
+}
+
+.card_header{
+    background-color:rgb(210, 213, 218) ;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+.card_header h4{
+    margin: 0;
+    padding: 10px;
+}
+.card_body{
+    display: flex;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border:2px solid #babec5;
+    border-radius: 4px;
+    margin: 8px;
+    width: 95%;
+    background-color: white;
+}
+
+.card_body:hover{
+    cursor: pointer;
+}
+
+.card_text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card_text h5{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.card_text p{
+    margin-top: 0;
 }
 
 .card_step_wrapper{
@@ -50,4 +112,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.card_step_button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

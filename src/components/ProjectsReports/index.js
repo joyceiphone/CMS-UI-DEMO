@@ -5,7 +5,7 @@ import './index.scss';
 export default function OverView() {
     return (
         <div className="overview-container">
-            <h4>Transaction</h4>
+            <h4>Projects Reports</h4>
         </div>
     )
 }

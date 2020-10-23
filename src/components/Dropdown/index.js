@@ -13,6 +13,7 @@ export default function Dropdown(props) {
     const [visible, setVisibility] = useState(false);
     const [addNew, setAddNew] = useState(false);
     const [input, setInput] = useState(value);
+    const [showMore, setShowMore] = useState(false);
 
     const handleMenuOpen = () => {
         setVisibility(!visible);
@@ -32,10 +33,20 @@ export default function Dropdown(props) {
         textChange(input);
         setInput('');
         setVisibility(!visible);
+        projectsCompanies.push(input);
         setAddNew(false);
     }
     const handleClose = () => {
         setAddNew(false)
+    }
+
+    const handleMenuItemClick = (company) => {
+        handleValue(company);
+        setVisibility(false);
+    }
+
+    const handleShowMore = () => {
+        setShowMore(!showMore);
     }
 
     useEffect(() => {
@@ -69,14 +80,26 @@ export default function Dropdown(props) {
                         addNew ? (
                             <Popup className="popup_form" title="New Customer" form={true} onClose={handleClose}>
                                 <div className="popup_content">
-                                    <h5>*Name</h5>
-                                    <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
+                                    <h5 style={{ marginBottom: '5px' }}>*Name</h5>
+                                    <input type="text" onChange={(e) => handleInputChange(e)} value={input} onClick={() => { textChange('') }} />
                                     <div className="button_area">
                                         <span style={{ color: "#0077c5" }}>Details</span>
                                         <Button className="white-button" onClick={handleCloseAddNew}>Save</Button>
                                     </div>
                                     <div className="popup_footer">
-                                        <span style={{ color: "#0077c5" }}>Got a Gmail Account</span>
+                                        {
+                                            showMore ? (
+                                                <div className="google_account">
+                                                    <span style={{ color: "#0077c5", marginBottom: '30px', display: 'inline-block' }} onClick={handleShowMore}>Maybe later</span>
+                                                    <div className="google_content">
+                                                        <Button className="white-button">Connect your Gmail Account</Button>
+                                                        <p>After you connect, your contacts will appear in a Holding</p>
+                                                        <p>But</p>
+                                                        <p>You can then choose which ones to add to Quickbooks</p>
+                                                    </div>
+                                                </div>
+                                            ) : (<span style={{ color: "#0077c5" }} onClick={handleShowMore}>Got a Gmail Account</span>)
+                                        }
                                     </div>
                                 </div>
                             </Popup>
@@ -84,7 +107,7 @@ export default function Dropdown(props) {
                             <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add New</MenuItem>
                             {
                                 projectsCompanies && projectsCompanies.map((company, i) => (
-                                    <MenuItem key={i} handleClick={handleValue} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
+                                    <MenuItem key={i} handleClick={() => handleMenuItemClick(company)} value={company} className="menu-item_dropdown">{company}</MenuItem>
                                 ))
                             }
                         </div>)
@@ -110,20 +133,32 @@ export default function Dropdown(props) {
                                 <Popup className="popup_form" title="New Customer" form={true} onClose={handleClose}>
                                     <div className="popup_content">
                                         <h5>*Name</h5>
-                                        <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
+                                        <input type="text" onChange={(e) => handleInputChange(e)} value={input} onClick={() => { textChange('') }} />
                                         <div className="button_area">
                                             <span style={{ color: "#0077c5" }}>Details</span>
                                             <Button className="white-button" onClick={handleCloseAddNew}>Save</Button>
                                         </div>
                                         <div className="popup_footer">
-                                            <span style={{ color: "#0077c5" }}>Got a Gmail Account</span>
+                                            {
+                                                showMore ? (
+                                                    <div className="google_account">
+                                                        <span style={{ color: "#0077c5", marginBottom: '30px', display: 'inline-block' }} onClick={handleShowMore}>Maybe later</span>
+                                                        <div className="google_content">
+                                                            <Button className="white-button">Connect your Gmail Account</Button>
+                                                            <p>After you connect, your contacts will appear in a Holding</p>
+                                                            <p>But</p>
+                                                            <p>You can then choose which ones to add to Quickbooks</p>
+                                                        </div>
+                                                    </div>
+                                                ) : (<span style={{ color: "#0077c5" }} onClick={handleShowMore}>Got a Gmail Account</span>)
+                                            }
                                         </div>
                                     </div>
                                 </Popup>
                             ) : (<div ref={menuRef} className="dropdown-menu-wrapper">
                                 {
                                     projectsCompanies && projectsCompanies.map((company, i) => (
-                                        <MenuItem key={i} handleClick={handleValue} value={company.name} className="menu-item_dropdown">{company.name}</MenuItem>
+                                        <MenuItem key={i} handleClick={() => handleMenuItemClick(company)} value={company} className="menu-item_dropdown">{company}</MenuItem>
                                     ))
                                 }
                             </div>)
@@ -147,13 +182,25 @@ export default function Dropdown(props) {
                                 <Popup className="popup_form" title="New Customer" form={true} onClose={handleClose}>
                                     <div className="popup_content">
                                         <h5>*Name</h5>
-                                        <input type="text" onChange={(e) => handleInputChange(e)} value={input} />
+                                        <input type="text" onChange={(e) => handleInputChange(e)} value={input} onClick={() => { textChange('') }} />
                                         <div className="button_area">
                                             <span style={{ color: "#0077c5" }}>Details</span>
                                             <Button className="white-button" onClick={handleCloseAddNew}>Save</Button>
                                         </div>
                                         <div className="popup_footer">
-                                            <span style={{ color: "#0077c5" }}>Got a Gmail Account</span>
+                                            {
+                                                showMore ? (
+                                                    <div className="google_account">
+                                                        <span style={{ color: "#0077c5", marginBottom: '30px', display: 'inline-block' }} onClick={handleShowMore}>Maybe later</span>
+                                                        <div className="google_content">
+                                                            <Button className="white-button">Connect your Gmail Account</Button>
+                                                            <p>After you connect, your contacts will appear in a Holding</p>
+                                                            <p>But</p>
+                                                            <p>You can then choose which ones to add to Quickbooks</p>
+                                                        </div>
+                                                    </div>
+                                                ) : (<span style={{ color: "#0077c5" }} onClick={handleShowMore}>Got a Gmail Account</span>)
+                                            }
                                         </div>
                                     </div>
                                 </Popup>

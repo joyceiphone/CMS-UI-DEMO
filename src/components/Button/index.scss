@@ -8,6 +8,8 @@
     outline: none;
     font-weight: 600;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .primary-button{
@@ -33,4 +35,9 @@
     background-color: black;
     color: white;
     padding: 5px 22px;
+}
+
+.menu-button{
+    padding: 10px 40px;
+    margin-left: 10px;
 }

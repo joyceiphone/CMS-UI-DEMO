@@ -131,7 +131,13 @@ export default function Modal(props) {
                                     </div>
                                 ) : (<h5 className="modal_input">Project name*</h5>)
                             }
-                            <input onClick={handleNameClick} ref={nameRef} className={classnames("name-input", {})} value={values.name} onChange={(e) => handleTextNameChange(e)} type="text" pleaceholder="What's the project?" />
+                            {
+                                alert1 ? (
+                                    <input style={{ outlineColor: 'red' }} onClick={handleNameClick} ref={nameRef} className={classnames("name-input", {})} value={values.name} onChange={(e) => handleTextNameChange(e)} type="text" pleaceholder="What's the project?" />
+                                ) : (
+                                        <input onClick={handleNameClick} ref={nameRef} className={classnames("name-input", {})} value={values.name} onChange={(e) => handleTextNameChange(e)} type="text" pleaceholder="What's the project?" />
+                                    )
+                            }
                         </div>
                         <div>
                             {
