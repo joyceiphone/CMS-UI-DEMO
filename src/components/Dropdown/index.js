@@ -72,7 +72,7 @@ export default function Dropdown(props) {
         return (
             <div className="drop-down" ref={menuRef}>
                 <div className="drop-down_input">
-                    <input ref={reference} value={value} onClick={() => handleFn()} className={classnames("customer-input", { 'alert_outline': alert })} onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
+                    <input ref={reference} value={value} className={classnames("customer-input", { 'alert_outline': alert })} onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
                     <span onClick={handleMenuOpen}><svg width="36" height="22" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m7 14l5-5h-3V8h-4v4H7l5 5z" fill="black"></path></svg></span>
                 </div>
                 {
@@ -124,7 +124,7 @@ export default function Dropdown(props) {
             return (
                 <div className="drop-down" ref={menuRef}>
                     <div className="drop-down_input">
-                        <input ref={reference} value={value} onClick={() => handleFn()} className="customer-input" onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
+                        <input ref={reference} value={value} className="customer-input" onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
                         <span onClick={handleMenuOpen}><svg width="36" height="22" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m7 14l5-5h-3V8h-4v4H7l5 5z" fill="black"></path></svg></span>
                     </div>
                     {
@@ -173,7 +173,7 @@ export default function Dropdown(props) {
             return (
                 <div className="drop-down" ref={menuRef}>
                     <div className="drop-down_input">
-                        <input ref={reference} value={value} onClick={() => handleFn()} className="customer-input" onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
+                        <input ref={reference} value={value} className="customer-input" onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
                         <span onClick={handleMenuOpen}><svg width="36" height="22" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m7 14l5-5h-3V8h-4v4H7l5 5z" fill="black"></path></svg></span>
                     </div>
                     {

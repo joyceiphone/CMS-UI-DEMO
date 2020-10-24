@@ -13,7 +13,7 @@ export default function Modal(props) {
     const [alert1, setAlert1] = useState(false);
     const [alert2, setAlert2] = useState(false);
     const [countNameClick, setNameClick] = useState(0);
-    const [countCustomerClick, setCustomerClick] = useState(0);
+    // const [countCustomerClick, setCustomerClick] = useState(0);
 
 
     const nameRef = useRef(null);
@@ -21,7 +21,6 @@ export default function Modal(props) {
 
     const handleClear = () => {
         setNameClick(0);
-        setCustomerClick(0);
         setAlert1(false);
         setAlert2(false);
         setValues({ name: '', customer: '', note: '' });
@@ -36,9 +35,9 @@ export default function Modal(props) {
     const handleNameClick = () => {
         setNameClick(1);
     }
-    const handleCustomerClick = () => {
-        setCustomerClick(1);
-    }
+    // const handleCustomerClick = () => {
+    //     setCustomerClick(1);
+    // }
 
     const handleClick = (value) => {
         const nextValues = { ...values, customer: value };
@@ -81,7 +80,7 @@ export default function Modal(props) {
     }, [nameRef, values])
     useEffect(() => {
         const handleClickOutSide = (e) => {
-            if (customerRef.current && !customerRef.current.contains(e.target) && countNameClick && countCustomerClick) {
+            if (customerRef.current && !customerRef.current.contains(e.target) && countNameClick) {
                 if (values.customer === '') {
                     setAlert2(true);
                 }
@@ -94,7 +93,7 @@ export default function Modal(props) {
         return () => {
             document.removeEventListener('click', handleClickOutSide, true);
         }
-    }, [customerRef, values, countNameClick, countCustomerClick])
+    }, [customerRef, values, countNameClick])
 
     useEffect(() => {
         if (values.customer !== '' && values.name !== '') {
@@ -148,7 +147,7 @@ export default function Modal(props) {
                                     </div>) : (
                                         <h5 className="modal_input">Customer*</h5>)
                             }
-                            <DropDown reference={customerRef} alert={alert2} showAlert={showAlert2} value={values.customer} textChange={handleTextCustomerChange} text="Who's the project for" handleValue={handleClick} handleFn={handleCustomerClick}>
+                            <DropDown reference={customerRef} alert={alert2} showAlert={showAlert2} value={values.customer} textChange={handleTextCustomerChange} text="Who's the project for" handleValue={handleClick} >
                             </DropDown>
                         </div>
                         <div>
