@@ -15,6 +15,8 @@ export default function Dropdown(props) {
     const [input, setInput] = useState(value);
     const [showMore, setShowMore] = useState(false);
 
+    const menuRef = useRef(null);
+
     const handleMenuOpen = () => {
         setVisibility(!visible);
         showAlert();
@@ -22,8 +24,6 @@ export default function Dropdown(props) {
     const handleInputChange = (e) => {
         setInput(e.target.value);
     }
-
-    const menuRef = useRef(null);
 
     const handleAddNew = () => {
         setAddNew(true);
@@ -70,7 +70,7 @@ export default function Dropdown(props) {
 
     if (value === '') {
         return (
-            <div className="drop-down">
+            <div className="drop-down" ref={menuRef}>
                 <div className="drop-down_input">
                     <input ref={reference} value={value} onClick={() => handleFn()} className={classnames("customer-input", { 'alert_outline': alert })} onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
                     <span onClick={handleMenuOpen}><svg width="36" height="22" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m7 14l5-5h-3V8h-4v4H7l5 5z" fill="black"></path></svg></span>
@@ -103,7 +103,7 @@ export default function Dropdown(props) {
                                     </div>
                                 </div>
                             </Popup>
-                        ) : (<div ref={menuRef} className="dropdown-menu-wrapper">
+                        ) : (<div className="dropdown-menu-wrapper">
                             <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add New</MenuItem>
                             {
                                 projectsCompanies && projectsCompanies.map((company, i) => (
@@ -122,7 +122,7 @@ export default function Dropdown(props) {
     else {
         if (projectsCompanies.includes(value)) {
             return (
-                <div className="drop-down">
+                <div className="drop-down" ref={menuRef}>
                     <div className="drop-down_input">
                         <input ref={reference} value={value} onClick={() => handleFn()} className="customer-input" onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
                         <span onClick={handleMenuOpen}><svg width="36" height="22" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m7 14l5-5h-3V8h-4v4H7l5 5z" fill="black"></path></svg></span>
@@ -155,7 +155,7 @@ export default function Dropdown(props) {
                                         </div>
                                     </div>
                                 </Popup>
-                            ) : (<div ref={menuRef} className="dropdown-menu-wrapper">
+                            ) : (<div className="dropdown-menu-wrapper">
                                 {
                                     projectsCompanies && projectsCompanies.map((company, i) => (
                                         <MenuItem key={i} handleClick={() => handleMenuItemClick(company)} value={company} className="menu-item_dropdown">{company}</MenuItem>
@@ -171,7 +171,7 @@ export default function Dropdown(props) {
         }
         else {
             return (
-                <div className="drop-down">
+                <div className="drop-down" ref={menuRef}>
                     <div className="drop-down_input">
                         <input ref={reference} value={value} onClick={() => handleFn()} className="customer-input" onChange={(e) => { textChange(e.target.value); handleInputChange(e) }} type="text" pleaceholder={text} />
                         <span onClick={handleMenuOpen}><svg width="36" height="22" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m7 14l5-5h-3V8h-4v4H7l5 5z" fill="black"></path></svg></span>
@@ -204,7 +204,7 @@ export default function Dropdown(props) {
                                         </div>
                                     </div>
                                 </Popup>
-                            ) : (<div className="dropdown-menu-wrapper" ref={menuRef}>
+                            ) : (<div className="dropdown-menu-wrapper">
                                 <MenuItem add handleClick={handleAddNew} className="menu-item_dropdown">+ Add {value}</MenuItem>
                             </div>)
                         ) : (
