@@ -25,7 +25,7 @@ Modal Design Flow Chart
 PopOver and Tabs Design Chart
 
 
-![image](modal.png)
+![image](tabs.png)
 
 
 
