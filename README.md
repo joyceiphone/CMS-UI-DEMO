@@ -18,8 +18,16 @@ Component Design Flow Chart
 ![Image](flowchart.png)
 
 
+Modal Design Flow Chart
+
+![image](modal.png)
+
+
 
 Spirits borrowed from Ant Design(https://ant.design/) and Material Design(https://material-ui.com/)
+
+
+
 
 
 
